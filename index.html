@@ -1,1 +1,88 @@
-<h1>Hello world?</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoopy the Forklift Robot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Scoopy the Forklift Robot</h1>
+    <p>ECE 118 Final Project &ndash; Group 2: Andrew Huang, Hayden Leach, Anthony Furman</p>
+  </header>
+
+  <section id="overview">
+    <h2>Project Overview</h2>
+    <p>Scoopy is an autonomous forklift-style robot designed to navigate a reconfigurable grid, locate and lift DC motors, and deposit them at a target location &mdash; all in under 1 minute. This project demonstrates integration of mechanical, electrical, and software subsystems to meet dynamic environmental constraints.</p>
+  </section>
+
+  <section id="demo">
+    <h2>Video Demonstration</h2>
+    <p>Watch Scoopy operate in a randomized environment:</p>
+    <video controls width="100%">
+      <source src="scoopy_demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="subsystems">
+    <h2>Subsystem Design</h2>
+    <div class="subsystem">
+      <h3>Mechanical System</h3>
+      <p>Scoopy's drivetrain, elevator mechanism, and scoop were custom designed and 3D-printed. The drivetrain uses a differential drive system, and the scoop is mounted on a servo-actuated elevator for lifting objects.</p>
+      <img src="mechanical_photo.jpg" alt="Mechanical Subsystem" />
+    </div>
+    <div class="subsystem">
+      <h3>Electrical System</h3>
+      <p>Powered by three 9.9V LiPo batteries, Scoopy uses IR sensors, limit switches, and break beam detection. An Uno32 board manages motor drivers (L298N) for DC motors and servos.</p>
+      <img src="schematic.jpg" alt="Electrical Schematic" />
+    </div>
+    <div class="subsystem">
+      <h3>Software System</h3>
+      <p>The robot operates on a hierarchical state machine (HSM) running on the Event-Service Framework. It includes object detection, jam recovery, and dynamic path following.</p>
+      <img src="hsm_diagram.png" alt="State Machine Diagram" />
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Project Timeline</h2>
+    <ul>
+      <li>Design Review 1 – Preliminary Concepts and Environment</li>
+      <li>Checkoff 1 – System Planning</li>
+      <li>Checkoff 2 – Mechanical and Software Design</li>
+      <li>Checkoff 3 – Sensors and Actuators Functional</li>
+      <li>Design Review 2 – Prototype Review</li>
+      <li>Checkoff 4 – Autonomous Behavior and Jam Recovery</li>
+      <li>Design Review 3 – Final Check-Off</li>
+    </ul>
+  </section>
+
+  <section id="bom">
+    <h2>Bill of Materials</h2>
+    <p><a href="BOM.pdf" target="_blank">View Final BOM (PDF)</a></p>
+  </section>
+
+  <section id="cad">
+    <h2>CAD & Schematics</h2>
+    <img src="final_cad.png" alt="CAD Assembly" />
+    <img src="electrical_schematic.png" alt="Electrical Schematic" />
+  </section>
+
+  <section id="photos">
+    <h2>Project Photos</h2>
+    <img src="photo1.jpg" alt="Scoopy Front View" />
+    <img src="photo2.jpg" alt="Elevator Assembly" />
+    <img src="photo3.jpg" alt="Sensor Mounts" />
+  </section>
+
+  <section id="reflections">
+    <h2>Reflections & Words of Wisdom</h2>
+    <p>Make sure your wiring accounts for elevator travel to avoid strain. Start sensor debugging early. Use consistent test environments. Always test jam recovery in real conditions.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Scoopy the Forklift Team | ECE 118 UCSC</p>
+  </footer>
+</body>
+</html>
