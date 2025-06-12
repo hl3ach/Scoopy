@@ -144,6 +144,22 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   }
 
+    .diagram-container {
+    background-color: #eaeaea; /* Light gray */
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .diagram-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+
 </style>
 
 </head>
@@ -207,13 +223,15 @@
   </div>
 
   <div class="subsystem">
-    <h3>Software System</h3>
-    <p>
-      Scoopy's logic is structured as a hierarchical state machine (HSM) implemented using the Event-Service Framework on the Uno32.
-      Core behaviors include ArUco tag response, object pickup and dropoff, dynamic path planning, and jam recovery.
-      The Raspberry Pi 4 is dedicated to ArUco tag detection using OpenCV and transmits the decoded information to the Uno32 via serial communication.
-    </p>
+  <h3>Software System</h3>
+  <p>
+    Scoopy's logic is structured as a hierarchical state machine (HSM) implemented using the Event-Service Framework on the Uno32.
+    Core behaviors include ArUco tag response, object pickup and dropoff, dynamic path planning, and jam recovery.
+    The Raspberry Pi 4 is dedicated to ArUco tag detection using OpenCV and transmits the decoded information to the Uno32 via serial communication.
+  </p>
+  <div class="diagram-container">
     <img src="OverallHSM.drawio.png" alt="State Machine Diagram" />
+  </div>
   </div>
   </section>
 
