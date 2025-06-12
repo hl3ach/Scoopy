@@ -93,22 +93,41 @@
 
 
   <section id="subsystems">
-    <h2>Subsystem Design</h2>
-    <div class="subsystem">
-      <h3>Mechanical System</h3>
-      <p>Scoopy's drivetrain, elevator mechanism, and scoop were custom designed and 3D-printed. The drivetrain uses a differential drive system, and the scoop is mounted on a servo-actuated elevator for lifting objects.</p>
-      <img src="mechanical_photo.jpg" alt="Mechanical Subsystem" />
-    </div>
-    <div class="subsystem">
-      <h3>Electrical System</h3>
-      <p>Powered by three 9.9V LiPo batteries, Scoopy uses IR sensors, limit switches, and break beam detection. An Uno32 board manages motor drivers (L298N) for DC motors and servos.</p>
-      <img src="schematic.jpg" alt="Electrical Schematic" />
-    </div>
-    <div class="subsystem">
-      <h3>Software System</h3>
-      <p>The robot operates on a hierarchical state machine (HSM) running on the Event-Service Framework. It includes object detection, jam recovery, and dynamic path following.</p>
-      <img src="hsm_diagram.png" alt="State Machine Diagram" />
-    </div>
+  <h2>Subsystem Design</h2>
+
+  <div class="subsystem">
+    <h3>Mechanical System</h3>
+    <p>
+      Scoopy’s mechanical system features a belt-driven elevator mounted on vertical rails.
+      The scoop is attached to a carriage that rides this elevator, with two servo motors controlling its tilt angle.
+      The elevator belt is driven from the bottom via a secondary belt connected to a DC motor powered through an H-bridge.
+      The drivetrain consists of two front-mounted DC motors with directly attached wheels, and two passive ball-bearing skegs at the rear for support and stability.
+      All CAD for the mechanical components was created in Onshape and fabricated using laser-cut wood and Bambu Lab A1 Mini 3D prints.
+    </p>
+    <img src="mechanical_photo.jpg" alt="Mechanical Subsystem" />
+  </div>
+
+  <div class="subsystem">
+    <h3>Electrical System</h3>
+    <p>
+      Scoopy runs on three separate 9.9V LiFePO4 batteries. One powers the Uno32 control stack, onboard sensors (through 3.3V regulators), and servo motors (through 5V regulators).
+      The second battery supplies all four DC motors — two for driving, one for the elevator, and one for active cooling — all controlled via dual L298N H-bridges.
+      The third battery powers a Raspberry Pi 4 through an adjustable voltage regulator configured to 5V/3A, which supports both the Pi and its connected USB camera.
+      The Uno32 handles all control logic, sensor readings, and motor outputs.
+    </p>
+    <img src="schematic.jpg" alt="Electrical Schematic" />
+  </div>
+
+  <div class="subsystem">
+    <h3>Software System</h3>
+    <p>
+      Scoopy's logic is structured as a hierarchical state machine (HSM) implemented using the Event-Service Framework on the Uno32.
+      Core behaviors include ArUco tag response, object pickup and dropoff, dynamic path planning, and jam recovery.
+      The Raspberry Pi 4 is dedicated to ArUco tag detection using OpenCV and transmits the decoded information to the Uno32 via serial communication.
+    </p>
+    <img src="hsm_diagram.png" alt="State Machine Diagram" />
+  </div>
+
   </section>
 
   <section id="timeline">
