@@ -112,6 +112,38 @@
     border: 1px solid #333;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
   }
+
+    .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  .video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e2f;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .video-item h3 {
+    margin-bottom: 1rem;
+    color: #98caff;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  /* Aspect ratio box for Shorts (vertical videos) */
+  .video-item iframe {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+
 </style>
 
 </head>
@@ -126,6 +158,15 @@
     <p>Scoopy is an autonomous forklift-style robot designed to navigate a reconfigurable grid, locate and lift DC motors, and deposit them at a target location, all in under 1 minute. This project demonstrates integration of mechanical, electrical, and software subsystems to meet dynamic environmental constraints.</p>
   </section>
 
+  
+ <section id="demo">
+  <h2>Video Demonstration</h2>
+  <p>Watch Scoopy complete the final check-off:</p>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+    <iframe src="https://www.youtube.com/embed/10Rwwf_KqDg" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</section>
+
   <section id="cad-model">
   <h2>3D CAD Model</h2>
   <p>Explore Scoopy the robot in 3D below:</p>
@@ -137,15 +178,6 @@
     style="width: 100%; height: 600px;">
   </model-viewer>
   </section>
-
-  
- <section id="demo">
-  <h2>Video Demonstration</h2>
-  <p>Watch Scoopy complete the final check-off:</p>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-    <iframe src="https://www.youtube.com/embed/10Rwwf_KqDg" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-</section>
 
 
   <section id="subsystems">
@@ -221,32 +253,34 @@
 
   <section id="videos">
   <h2>Video Gallery</h2>
+  <div class="video-grid">
+    <div class="video-item">
+      <h3>Elevator Mechanism</h3>
+      <iframe src="https://www.youtube.com/embed/zl4gS81eEgw" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-  <h3>Elevator Mechanism</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:2rem;">
-    <iframe src="https://www.youtube.com/embed/zl4gS81eEgw" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
+    <div class="video-item">
+      <h3>Demo Day – Carpet Run</h3>
+      <iframe src="https://www.youtube.com/embed/N1szyf7OR-A" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-  <h3>Demo Day – Carpet Run</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:2rem;">
-    <iframe src="https://www.youtube.com/embed/N1szyf7OR-A" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
+    <div class="video-item">
+      <h3>Pickup and Drop Test</h3>
+      <iframe src="https://www.youtube.com/embed/LyYb4Yl55do" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-  <h3>Pickup and Drop Test</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:2rem;">
-    <iframe src="https://www.youtube.com/embed/LyYb4Yl55do" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
+    <div class="video-item">
+      <h3>First Line-Follow Test</h3>
+      <iframe src="https://www.youtube.com/embed/Va33RfyUPoo" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-  <h3>First Line-Follow Test</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:2rem;">
-    <iframe src="https://www.youtube.com/embed/Va33RfyUPoo" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-  </div>
-
-  <h3>Elevator Test</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:2rem;">
-    <iframe src="https://www.youtube.com/embed/blON_ozUKQ4" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+    <div class="video-item">
+      <h3>Elevator Test</h3>
+      <iframe src="https://www.youtube.com/embed/blON_ozUKQ4" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
 </section>
+
 
   
   <section id="reflections">
